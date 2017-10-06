@@ -84,7 +84,7 @@ public class Session
 	private void launchLandingPane()
 	{
 		// step 1.) set up handlers
-		class addSiteBtnHandler implements EventHandler<ActionEvent>
+		class AddSiteBtnHandler implements EventHandler<ActionEvent>
 		{
 			@Override
 			public void handle(ActionEvent e)
@@ -93,7 +93,7 @@ public class Session
 			};
 		}
 
-		class searchHandler implements EventHandler<ActionEvent>
+		class SearchHandler implements EventHandler<ActionEvent>
 		{
 			@Override
 			public void handle(ActionEvent e)
@@ -102,7 +102,7 @@ public class Session
 			}
 		}
 
-		class deleteHandler implements EventHandler<ActionEvent>
+		class DeleteHandler implements EventHandler<ActionEvent>
 		{
 			@Override
 			public void handle(ActionEvent e)
@@ -111,7 +111,7 @@ public class Session
 			};
 		}
 
-		class saveHandler implements EventHandler<ActionEvent>
+		class SaveHandler implements EventHandler<ActionEvent>
 		{
 			@Override
 			public void handle(ActionEvent e)
@@ -158,7 +158,7 @@ public class Session
 		
 		
 		// makes LandingPane and puts it on a scene
-		landingPane = new LandingPane(observableSiteList, new addSiteBtnHandler(), new searchHandler(), new saveHandler(), new deleteHandler(), new CloseProgramHandler());
+		landingPane = new LandingPane(observableSiteList, new AddSiteBtnHandler(), new SearchHandler(), new SaveHandler(), new DeleteHandler(), new CloseProgramHandler());
 		Scene scene = new Scene(landingPane, 520, 480);
 		
 		// add listeners
@@ -191,7 +191,6 @@ public class Session
 				addSite(addSitePane);
 				sortSiteList();
 				newSiteStage.close();
-
 			};
 		}
 
@@ -213,7 +212,6 @@ public class Session
 		newSiteStage.setTitle("Add Website");
 		newSiteStage.show();
 		newSiteStage.requestFocus();
-
 	}
 
 	private void addSite(AddSitePane addSitePane)
